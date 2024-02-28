@@ -1,18 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-import navbar from './components/navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
+import Bayas from './components/Bayas';
+import Busqueda_de_pokemon from './components/Busqueda_de_pokemon';
+import Articulos from './components/Articulos';
+import TagPumkin from './fondo/TagPumkin.png';
+import TagDrash from './fondo/TagDrash.png';
+import TagKelpsyBerry from './fondo/TagKelpsyBerry.png';
+const bayasData = [
+  {
+    nombre: 'Pumkin Berry',
+    ubicacion: 'Árboles en la Ruta 2',
+    imagen: TagPumkin,
+  },
+  {
+    nombre: 'Kelpsy Berry',
+    ubicacion: 'Árboles en la Ruta 2',
+    imagen: TagKelpsyBerry,
+  },
+  {
+    nombre: 'Drash Berry',
+    ubicacion: 'Árboles en la Ruta 4',
+    imagen: TagDrash,
+  },
+
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Busqueda_de_pokemon />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/bayas" element={<Bayas bayasData={bayasData} />} />
+        <Route path="/busqueda-de-pokemon" element={<Busqueda_de_pokemon />} />
+        <Route path="/articulos" element={<Articulos />} />
+      </Routes>
+    </Router>
   );
 }
 
