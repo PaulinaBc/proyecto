@@ -1,3 +1,4 @@
+// App.js
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
@@ -7,6 +8,7 @@ import Articulos from './components/Articulos';
 import TagPumkin from './fondo/TagPumkin.png';
 import TagDrash from './fondo/TagDrash.png';
 import TagKelpsyBerry from './fondo/TagKelpsyBerry.png';
+
 const bayasData = [
   {
     nombre: 'Pumkin Berry',
@@ -23,18 +25,16 @@ const bayasData = [
     ubicacion: 'Árboles en la Ruta 4',
     imagen: TagDrash,
   },
-
 ];
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Busqueda_de_pokemon />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/bayas" element={<Bayas bayasData={bayasData} />} />
-        <Route path="/busqueda-de-pokemon" element={<Busqueda_de_pokemon />} />
+        <Route path="/buscar-pokemon" element={<Busqueda_de_pokemon />} />
         <Route path="/articulos" element={<Articulos />} />
       </Routes>
     </Router>

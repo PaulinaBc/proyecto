@@ -10,7 +10,7 @@ const Navbar = () => {
             <ul>
                 <li><Link to="/" className='text-gray-950/50'>HomePage</Link></li>
                 <li><Link to="/bayas" className="text-gray-950/50">Bayas</Link></li>
-                <li><Link to="/busqueda" className="text-gray-950/50">Búsqueda de Pokémon</Link></li>
+                <li><Link to="/buscar-pokemon">Buscar Pokémon</Link></li>
                 <li><Link to="/articulos" className="text-gray-950/50">Artículos</Link></li>
             </ul>
         </nav>
