@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
+// Estructura de la respuesta esperada de la API para las bayas:
+// {
+//   "id": number,
+//   "name": string,
+//   "growth_time": number,
+//   "max_harvest": number,
+//   "natural_gift_power": number,
+//   "size": number,
+//   "smoothness": number,
+// }
 function Bayas() {
     const [bayasData, setBayasData] = useState([]);
     const [selectedBaya, setSelectedBaya] = useState(null);
@@ -9,7 +18,6 @@ function Bayas() {
             try {
                 const response = await fetch('https://pokeapi.co/api/v2/berry/');
                 const data = await response.json();
-                // Limitar a 4 bayas
                 setBayasData(data.results.slice(0, 4));
             } catch (error) {
                 console.error('Error fetching bayas data:', error);
@@ -23,7 +31,7 @@ function Bayas() {
         try {
             const response = await fetch(url);
             const data = await response.json();
-            // Actualizamos el estado con la información detallada
+           
             setSelectedBaya(data);
         } catch (error) {
             console.error('Error fetching detailed baya data:', error);
@@ -31,7 +39,6 @@ function Bayas() {
     };
 
     const closeDetails = () => {
-        // Cerrar los detalles al hacer clic en el botón de cierre
         setSelectedBaya(null);
     };
 
@@ -41,21 +48,21 @@ function Bayas() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {bayasData.map((baya, index) => (
                     <div key={index} className="baya-card p-4 rounded-lg shadow-md">
-                        {/* Utilizamos las imágenes reales de las bayas */}
+                       
                         <img
                             src={`https://pokeapi.co/media/sprites/pokemon/other/official-artwork/${index + 1}.png`}
                             alt={baya.name}
                             className="baya-image w-20 h-20 object-cover mb-4"
                         />
                         <h3 className="text-white text-lg font-semibold mb-2">{baya.name}</h3>
-                        {/* Agregar botón para mostrar información detallada */}
+                 
                         <button onClick={() => fetchDetailedBayaData(baya.url)}>
                             Ver Detalles
                         </button>
                     </div>
                 ))}
             </div>
-            {/* Mostrar detalles si hay una baya seleccionada */}
+     
             {selectedBaya && (
                 <div className="baya-details p-4 mt-4 rounded-lg border border-gray-300">
                     <h3 className="text-xl font-semibold mb-2">{selectedBaya.name}</h3>

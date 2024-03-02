@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
-
+/*{
+    "name": "",
+        "type": "",
+            "evolutions": [
+                {
+                    "name": "",
+                    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png"
+                },
+                {
+                    "name": "",
+                    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png"
+                },
+            ]
+}*/
 function BusquedaDePokemon() {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResult, setSearchResult] = useState(null);
@@ -89,22 +102,4 @@ function BusquedaDePokemon() {
 
 export default BusquedaDePokemon;
 
-//respuestas Json
-//{
-/*"id": 35,
-   "name": "clefairy",
-        "base_experience": 113,
-            "height": 6,
-                "is_default": true,
-                    "order": 56,
-                        "weight": 75,
-                            "abilities": [
-                                {
-                                    "is_hidden": true,
-                                    "slot": 3,
-                                    "ability": {
-                                        "name": "friend-guard",
-                                        "url": "https://pokeapi.co/api/v2/ability/132/"
-                                    }
-                                }
-                            ]*/
+

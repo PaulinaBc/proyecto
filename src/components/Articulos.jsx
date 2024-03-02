@@ -4,14 +4,20 @@ const ItemInfo = ({ item }) => {
   if (!item) {
     return <p>Cargando información...</p>;
   }
-
+  // Estructura de la respuesta esperada de la API:
+  // {
+  //   "id": number,
+  //   "name": string,
+  //   "cost": number,
+  //   },
+  //   
+  // }
   return (
     <div className="text-white p-4 m-2 w-64 rounded shadow-lg">
       <h2 className="font-bold text-xl mb-2">{item.name}</h2>
       <img src={item.sprites.default} alt={`Imagen de ${item.name}`} className="mb-2" />
       <p className="text-base border-2">ID: {item.id}</p>
       <p className="text-base border-2">Costo: {item.cost}</p>
-      {/* Agrega más detalles según sea necesario */}
     </div>
   );
 };
