@@ -1,4 +1,4 @@
-// pokemonData.js
+
 
 const pokemonImages = [
     

@@ -8,7 +8,6 @@ const PokedexCard = ({ pokemon, onPrevClick, onNextClick }) => {
                 <Typography variant="h5" component="div">
                     {pokemon.name}
                 </Typography>
-                {/* Otras informaciones del Pokémon */}
             </CardContent>
             <Grid container justifyContent="space-between">
                 <Button variant="contained" color="primary" onClick={onPrevClick}>

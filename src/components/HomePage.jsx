@@ -50,7 +50,7 @@ function HomePage() {
                 </div>
                 
                 <Link to="/bayas">
-                    <button className="rounded-full border-4 border-r-pink-300 border-l-pink-300 text-white font-sans px-6 py-3, border-t-0 border-b-0" style={{ marginLeft: '0px', margin: '30px' }}>Leer Más</button>
+                    <button className="rounded-full border-4 border-r-pink-300 border-l-pink-300 text-black font-sans px-6 py-3, border-t-0 border-b-0 bg-white" style={{ marginLeft: '0px', margin: '30px' }}>Leer Más</button>
                 </Link>
             </div>
             <p className="text-white text-2xl font-semibold mb-6 rounded-lg p-2 border border-r-white border-l-white " style={{ textAlign: 'left' }}>
@@ -58,8 +58,8 @@ function HomePage() {
             </p>
             <img src={pokemonImages[currentImageIndex]} alt={`pokemon ${currentImageIndex + 1}`} className="" style={{ width: '500px', height: '500px' }} />
             <div>
-                <button className="rounded-full border-4 border-y-blue-300 border-r-0 border-l-0 font-sans px-6 py-3" onClick={prevImage} style={{ margin: '10px' }}>Anterior</button>
-                <button className="rounded-full border-4  border-y-blue-300 border-r-0 border-l-0 font-sans px-6 py-3" onClick={nextImage} style={{ margin: '10px' }}>Siguiente</button>
+                <button className="bg-white rounded-full border-4 border-y-blue-300 border-r-0 border-l-0 font-sans px-6 py-3" onClick={prevImage} style={{ margin: '10px' }}>Anterior</button>
+                <button className="bg-white rounded-full border-4  border-y-blue-300 border-r-0 border-l-0 font-sans px-6 py-3" onClick={nextImage} style={{ margin: '10px' }}>Siguiente</button>
             </div>
         </div>
     );

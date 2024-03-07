@@ -80,8 +80,8 @@ function BusquedaDePokemon() {
             <SearchBar onSearch={setSearchTerm} />
 
             {searchResult && (
-                <div className="mt-4 p-4 rounded-full border border-y-green-200 text-center">
-                    <h2 className="text-2xl font-bold text-zinc-200/75 mb-4">{searchResult.name}</h2>
+                <div className="mt-4 p-4 rounded-full border border-y-yellow-600 text-center">
+                    <h2 className="text-2xl font-bold text-zinc-400 mb-4">{searchResult.name}</h2>
                     <p className="font-bold text-xl mb-2 underline decoration-1">Tipo: {searchResult.type}</p>
 
                     {searchResult.evolutions.length > 0 && (

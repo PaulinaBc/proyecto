@@ -1,14 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// Estructura de la respuesta esperada de la API para las bayas:
-// {
-//   "id": number,
-//   "name": string,
-//   "growth_time": number,
-//   "max_harvest": number,
-//   "natural_gift_power": number,
-//   "size": number,
-//   "smoothness": number,
-// }
 function Bayas() {
     const [bayasData, setBayasData] = useState([]);
     const [selectedBaya, setSelectedBaya] = useState(null);
@@ -45,18 +35,18 @@ function Bayas() {
     return (
         <div className="bayas">
             <h2 className="text-white text-2xl font-semibold mb-4">Bayas</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
                 {bayasData.map((baya, index) => (
-                    <div key={index} className="baya-card p-4 rounded-lg shadow-md">
+                    <div key={index} className="baya-card p-4 rounded-lg shadow-md ">
                        
                         <img
                             src={`https://pokeapi.co/media/sprites/pokemon/other/official-artwork/${index + 1}.png`}
                             alt={baya.name}
-                            className="baya-image w-20 h-20 object-cover mb-4"
+                            className="baya-image w-20 h-20  mb-4"
                         />
-                        <h3 className="text-white text-lg font-semibold mb-2">{baya.name}</h3>
+                        <h3 className="text-black text-lg font-semibold mb-2 capitalize ">{baya.name}</h3>
                  
-                        <button onClick={() => fetchDetailedBayaData(baya.url)}>
+                        <button className= "rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, border-t-0 border-b-0 bg-white"onClick={() => fetchDetailedBayaData(baya.url)}>
                             Ver Detalles
                         </button>
                     </div>
@@ -64,16 +54,20 @@ function Bayas() {
             </div>
      
             {selectedBaya && (
-                <div className="baya-details p-4 mt-4 rounded-lg border border-gray-300">
-                    <h3 className="text-xl font-semibold mb-2">{selectedBaya.name}</h3>
-                    <p>Growth Time: {selectedBaya.growth_time}</p>
-                    <p>Max Harvest: {selectedBaya.max_harvest}</p>
-                    <p>Natural Gift Power: {selectedBaya.natural_gift_power}</p>
-                    <p>Size: {selectedBaya.size}</p>
-                    <p>Smoothness: {selectedBaya.smoothness}</p>
-                  
-                    <button onClick={closeDetails}>Cerrar</button>
+                <div className="flex items-center justify-center mt-10">
+                    <div className="baya-details p-4 mt-4 r border-4 border-r-pink-300 border-l-pink-300 text-black font-sans bg-transparent w-1/4 place-items-center">
+                        <h3 className="text-xl font-semibold mb-2 capitalize">{selectedBaya.name}</h3>
+                        
+                        <p className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' >Growth Time: {selectedBaya.growth_time}</p>
+                        <p className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' >Max Harvest: {selectedBaya.max_harvest}</p>
+                        <p className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' >Natural Gift Power: {selectedBaya.natural_gift_power}</p>
+                        <p className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' >Size: {selectedBaya.size}</p>
+                        <p className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' >Smoothness: {selectedBaya.smoothness}</p>
+
+                        <button className='rounded-full border-4 rounded-lg border-r-pink-300 border-l-pink-300 text-black font-sans px-4 py-3, m-5 border-t-0 border-b-0 bg-white' onClick={closeDetails}>Cerrar</button>
+                    </div>
                 </div>
+
             )}
         </div>
     );
